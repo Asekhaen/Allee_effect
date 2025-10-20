@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# You can edit the values of these directives as needed
 #SBATCH --account=pawsey1163
-#SBATCH --job-name=parameter_check  # Name of the job
+#SBATCH --job-name=allee_effect_load   # Name of the job
+#SBATCH --partition=work
 #SBATCH --nodes=1
 #SBATCH --ntasks=1                # Number of tasks (use 1 for a serial R job)
-#SBATCH --cpus-per-task=4         # Number of CPUs per task
-#SBATCH --time=10:00:00           # Maximum wall-clock time (HH:MM:SS)
-#SBATCH --mem-per-cpu=2G          # Memory requested per node
+#SBATCH --cpus-per-task=64        # Number of CPUs per task
+#SBATCH --time=23:00:00           # Maximum wall-clock time (HH:MM:SS)
+#SBATCH --mem=128          # Memory requested per node
 #SBATCH --output=r_job_%j.out     # Standard output file
 #SBATCH --error=r_job_%j.err      # Standard error file
 

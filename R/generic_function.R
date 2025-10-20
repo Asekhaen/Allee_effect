@@ -10,7 +10,7 @@ ini_pop <- function(n_patches, n_per_patch, n_loci, init_frequency) {
   
   patches_pop <- vector("list", n_patches)
   
-  # --- 1. Create source population (patch 1) ---
+  #Create source population with initial load
   patches_pop[[1]] <- tibble(
     allele1 = matrix(
       rbinom(n = n_per_patch[1] * n_loci, size = 1, prob = init_frequency),
@@ -25,11 +25,11 @@ ini_pop <- function(n_patches, n_per_patch, n_loci, init_frequency) {
     alive = TRUE
   )
   
-  # --- 2. Sample founders for other patches (2:7) ---
+  # Sample founders for other patches (patch 2-7)
   for (i in 2:n_patches) {
-    founders_idx <- sample(seq_len(n_per_patch[1]), n_per_patch[i], replace = FALSE)
+    founders <- sample(seq_len(n_per_patch[1]), n_per_patch[i], replace = FALSE)
     
-    patches_pop[[i]] <- patches_pop[[1]][founders_idx, ]
+    patches_pop[[i]] <- patches_pop[[1]][founders, ]
   }
   
   return(patches_pop)
@@ -186,8 +186,6 @@ growth <- function(pop_patches,
   
   return(result)
 }
-
-
 
 
 
