@@ -6,7 +6,7 @@
 #               PARAMETERS                #
 ###########################################
 
-set.seed(230)
+#set.seed(230)
 
 
 ###########################################
@@ -16,9 +16,9 @@ set.seed(230)
 ###########################################
 # Set working directory to sourced file
 
-
-source("dependencies.R")
-
+# 
+# source("dependencies.R")
+# 
 # results <- run_model (
 #   n_patches = n_patches,
 #   pop_patches,
